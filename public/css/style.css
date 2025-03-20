@@ -1,0 +1,256 @@
+/* Reset básico para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #f4f7fc; /* Cinza claro */
+    color: #34495e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 80px; /* Evita sobreposição do cabeçalho */
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+    background-color: #3498db; /* Azul principal */
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo a {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Menu */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #2980b9;
+    color: #f1c40f;
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
+main {
+    width: 80%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* ======= TABELAS ======= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 16px;
+    text-align: left;
+    font-size: 16px;
+    color: #34495e;
+}
+
+table th {
+    background-color: #3498db;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table td a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table td a:hover {
+    color: #2980b9;
+}
+
+/* ======= BOTÕES ======= */
+.add-time, .options {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.add-time a, .options a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.add-time a:hover, .options a:hover {
+    background-color: #2980b9;
+}
+
+/* ======= RESPONSIVO ======= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    table th, table td {
+        padding: 12px;
+    }
+}
+
+/*add jogador */
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    /* Cinza claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 500px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #3498db;
+    /* Azul suave */
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e;
+    /* Cinza escuro */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3498db;
+    /* Azul suave no foco */
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #3498db;
+    /* Azul suave */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+    /* Azul mais forte no hover */
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+.form-footer a:hover {
+    color: #2980b9;
+}
+
+
+
+
+
+

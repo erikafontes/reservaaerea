@@ -1,0 +1,43 @@
+<%-include('../cabecalho.ejs') %>
+
+
+        <h1>Times</h1>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Estádio</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Brasil -PE</td>
+                    <td>Bento Freitas</td>
+                    <td class="options">
+                        <a href="/admin/jogador/lst">Listar jogadores</a>
+                        <a href="/admin/viagem/edt/1">Editar</a>
+                        <a href="/admin/viagem/lst">Excluir</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vitória</td>
+                    <td>Barradão</td>
+                    <td class="options">
+                        <a href="/admin/jogador/lst">Listar jogadores</a>
+                        <a href="/admin/viagem/edt/2">Editar</a>
+                        <a href="/admin/viagem/lst">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="add-viagem">
+            <a href="/admin/viagem/add"> Adicionar viagem</a>
+        </div>
+    </body>
+
+    </html>
