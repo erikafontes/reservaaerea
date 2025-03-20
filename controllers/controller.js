@@ -56,5 +56,28 @@ export async function edtaeroporto(req, res){
 
 //usuario
 
+export async function abreaddusuario(req, res) {
+    res.render('admin/usuario/add')
+}
+export async function addusuario(req, res) {
+    res.redirect('/admin/usuario/add')
+}
+export async function listarusuario(req, res) {
+    res.render('admin/usuario/lst', '');
+}
+export async function filtrarusuario(req, res) {
+    res.render('admin/usuario/lst', '');
+}
+export async function deletausuario(req, res) {
+    res.redirect('/admin/usuario/lst')
+ }
+export async function abreedtusuario(req, res){
+   
+    res.render('admin/usuario/edt','')
+}
+export async function edtusuario(req, res){
+    res.redirect('/admin/usuario/edt')
+}
+
 
 
