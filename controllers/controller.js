@@ -2,30 +2,36 @@ export async function home(req,res){
     res.render('admin/index')
 }
 
-//viagem
-export async function abreaddviagem(req, res) {
-    res.render('admin/viagem/add')
+//cotacao
+export async function abreaddcotacao(req, res) {
+    res.render('admin/cotacao/add')
 }
 
-export async function addviagem(req, res) {
-    res.redirect('/admin/viagem/add')
-}
-
-export async function listarviagem(req, res) {
-    res.render('admin/viagem/lst', '');
-}
-export async function filtrarviagem(req, res) {
-    res.render('admin/viagem/lst', '');
-}
-export async function deletaviagem(req, res) {
-    res.redirect('/admin/viagem/lst')
- }
- export async function abreedtviagem(req, res){
+export async function addcotacao(req, res) {
+    await Time.create({
+        nome: req.body.nome,
+        estadio: req.body.estadio
+    }
+    )
    
-    res.render('admin/viagem/edt','')
+    res.redirect('/admin/cotacao/add')
 }
-export async function edtviagem(req, res){
-    res.redirect('/admin/viagem/lst')
+
+export async function listarcotacao(req, res) {
+    res.render('admin/cotacao/lst', '');
+}
+export async function filtrarcotacao(req, res) {
+    res.render('admin/cotacao/lst', '');
+}
+export async function deletacotacao(req, res) {
+    res.redirect('/admin/cotacao/lst')
+ }
+ export async function abreedtcotacao(req, res){
+   
+    res.render('admin/cotacao/edt','')
+}
+export async function edtcotacao(req, res){
+    res.redirect('/admin/cotacao/lst')
 }
 
 
@@ -78,6 +84,33 @@ export async function abreedtusuario(req, res){
 export async function edtusuario(req, res){
     res.redirect('/admin/usuario/edt')
 }
+
+
+//companhia
+
+export async function abreaddcompanhia(req, res) {
+    res.render('admin/companhia/add')
+}
+export async function addcompanhia(req, res) {
+    res.redirect('/admin/companhia/add')
+}
+export async function listarcompanhia(req, res) {
+    res.render('admin/companhia/lst', '');
+}
+export async function filtrarcompanhia(req, res) {
+    res.render('admin/companhia/lst', '');
+}
+export async function deletacompanhia(req, res) {
+    res.redirect('/admin/companhia/lst')
+ }
+export async function abreedtcompanhia(req, res){
+   
+    res.render('admin/companhia/edt','')
+}
+export async function edtcompanhia(req, res){
+    res.redirect('/admin/companhia/edt')
+}
+
 
 
 
