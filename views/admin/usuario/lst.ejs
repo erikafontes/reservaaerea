@@ -1,27 +1,40 @@
-<%-include('../cabecalho.ejs') %>
+<%- include('../cabecalho.ejs') %>
 
+<h1>Usuários</h1>
+<div class="add-time">
+    <table>
+        <!-- Cabeçalho da Tabela -->
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <!-- Corpo da Tabela -->
+        <tbody>
+            <% usuario.forEach(function(usuario){ %>
+            <tr>
+                <td><%= usuario.nome %></td>
+                <td><%= usuario.email %></td>
+                <td><%= usuario.cpf %></td>
+                <td><%= usuario.telefone %></td>
+                    <a href="/admin/usuario/edt/<%= usuario.id %>" class="btn edit">
+                        <i class="fas fa-edit"></i>&nbsp;Editar
+                    </a>
+                    <a href="/admin/usuario/del/<%= usuario.id %>" class="btn delete">
+                        <i class="fas fa-trash"></i>&nbsp;Excluir
+                    </a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
 
+    <!-- Link para adicionar um novo usuário -->
+    <a href="/admin/usuario/add" class="btn add">Adicionar Usuário</a>
+</div>
 
-
-
-    <h1>Usuários</h1>
-    <div class="add-time">
-
-        <table>
-
-
-                    <td class="options">
-                        <a href="/admin/usuario/edt">Editar</a>
-                        <a href="/admin/usuario/lst">Desligar</a>
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-        <a href="/admin/usuario/add"> Adicionar Usuário</a>
-
-        </body>
-
-        </html>
+</body>
+</html>

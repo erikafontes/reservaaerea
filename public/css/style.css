@@ -1,4 +1,4 @@
-/* Reset básico para remover margens e paddings padrão */
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
@@ -8,29 +8,29 @@
 
 /* Corpo da página */
 body {
-    background-color: #f4f7fc; /* Cinza claro */
+    background-color: #f4f7fc;
     color: #34495e;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    padding-top: 80px; /* Evita sobreposição do cabeçalho */
+    padding-top: 80px; /* Espaçamento para o cabeçalho fixo */
 }
 
-/* ======= CABEÇALHO ======= */
+/* Cabeçalho */
 header {
-    background-color: #3498db; /* Azul principal */
+    background-color: #2c3e50;
     padding: 15px 0;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar */
+/* Navegação no cabeçalho */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -39,6 +39,10 @@ header {
     margin: 0 auto;
     padding: 0 20px;
 }
+/* formularios */
+.form-container
+
+
 
 /* Logo */
 .logo a {
@@ -74,15 +78,32 @@ header {
     color: #f1c40f;
 }
 
-/* ======= CONTEÚDO PRINCIPAL ======= */
+/* Main Content */
 main {
     width: 80%;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 100px; /* Espaço para o cabeçalho fixo */
     padding: 20px;
 }
 
-/* ======= TABELAS ======= */
+/* Estilo de Botões */
+a.button-style {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #2ecc71; /* Cor verde */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    margin: 10px;
+}
+
+a.button-style:hover {
+    background-color: #27ae60; /* Cor verde mais escuro */
+}
+
+/* Tabelas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -100,7 +121,7 @@ table th, table td {
 }
 
 table th {
-    background-color: #3498db;
+    background-color: #2c3e50;
     color: white;
 }
 
@@ -118,28 +139,18 @@ table td a:hover {
     color: #2980b9;
 }
 
-/* ======= BOTÕES ======= */
-.add-time, .options {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.add-time a, .options a {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #3498db;
+/* Rodapé */
+footer {
+    background-color: #2c3e50;
     color: white;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 8px;
-    transition: background-color 0.3s;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-.add-time a:hover, .options a:hover {
-    background-color: #2980b9;
-}
-
-/* ======= RESPONSIVO ======= */
+/* Responsividade */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -160,97 +171,3 @@ table td a:hover {
         padding: 12px;
     }
 }
-
-/*add jogador */
-/* Estilos gerais */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fc;
-    /* Cinza claro */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    max-width: 500px;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-h1 {
-    text-align: center;
-    color: #3498db;
-    /* Azul suave */
-    font-size: 24px;
-    margin-bottom: 30px;
-}
-
-label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 8px;
-    color: #34495e;
-    /* Cinza escuro */
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 16px;
-    background-color: #f9f9f9;
-}
-
-input[type="text"]:focus {
-    outline: none;
-    border-color: #3498db;
-    /* Azul suave no foco */
-}
-
-button {
-    width: 100%;
-    padding: 14px;
-    background-color: #3498db;
-    /* Azul suave */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #2980b9;
-    /* Azul mais forte no hover */
-}
-
-.form-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.form-footer a {
-    text-decoration: none;
-    color: #3498db;
-}
-
-.form-footer a:hover {
-    color: #2980b9;
-}
-
-
-
-
-
-

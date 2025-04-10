@@ -1,41 +1,40 @@
-<%-include('../cabecalho.ejs') %>
+<%- include('../cabecalho.ejs') %>
 
+<h1>Companhias Aéreas</h1>
+<div class="add-time">
+    <table>
+        <!-- Cabeçalho da tabela -->
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>País</th>
+                <th>Foto</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <!-- Corpo da tabela -->
+        <tbody>
+            <% companhia.forEach(function(companhia){ %>
+            <tr>
+                <td><%= companhia.nome %></td>
+                <td><%= companhia.pais %></td>
+                <td><img src="<%= companhia.foto %>" alt="<%= companhia.nome %>"></td>
+                <td>
+                    <a href="/admin/companhia/edt/<%= companhia.id %>" class="btn edit">
+                        <i class="fas fa-edit"></i>&nbsp;Editar
+                    </a>
+                    <a href="/admin/companhia/del/<%= companhia.id %>" class="btn delete">
+                        <i class="fas fa-trash"></i>&nbsp;Excluir
+                    </a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
 
-
- 
-
-    <h1>Companhias Aéreas</h1>
-    <div class="add-time">
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Localização</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <!-- <tr>
-                    <td>geromel</td>
-                    <td>2.00</td>
-                    <td>80 kg</td>
-                    <td>lateral</td> -->
-
-
-
-                    <td class="options">
-                        <a href="/admin/aeroporto/edt">Editar</a>
-                        <a href="/admin/aeroporto/lst">Desligar</a>
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-        <a href="/admin/aeroporto/add"> Adicionar aeroporto</a>
+    <!-- Links para adicionar, editar ou desligar -->
+    <a href="/admin/companhia/add" class="btn add">Adicionar Companhias</a>
+</div>
 
 </body>
-
 </html>

@@ -1,42 +1,42 @@
-<%-include('../cabecalho.ejs') %>
+<%- include('../cabecalho.ejs') %>
 
+<h1>Cotações</h1>
+<div class="add-time">
 
+    <table>
+        <!-- Cabeçalho da tabela -->
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Contato</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <!-- Corpo da tabela -->
+        <tbody>
+            <% cotacao.forEach(function(cotacao){ %>
+            <tr>
+                <td><%= cotacao.nome %></td>
+                <td><%= cotacao.contato %></td>
+                <td><%= cotacao.status %></td>
+                <td>
+                    <a href="/admin/cotacao/edt/<%= cotacao.id %>" class="btn edit">
+                        <i class="fas fa-edit"></i>&nbsp;Editar
+                    </a>
+                    <a href="/admin/cotacao/del/<%= cotacao.id %>" class="btn delete">
+                        <i class="fas fa-trash"></i>&nbsp;Excluir
+                    </a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
 
- 
+    <!-- Link para iniciar uma nova cotação -->
+    <a href="/admin/cotacao/add" class="btn add">Iniciar uma nova Cotação</a>
 
-    <h1>Cotações</h1>
-    <div class="add-time">
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Contato</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <!-- <tr>
-                    <td>geromel</td>
-                    <td>2.00</td>
-                    <td>80 kg</td>
-                    <td>lateral</td> -->
-
-
-
-                    <td class="options">
-                        <a href="/admin/cotacao/edt">Editar</a>
-                        <a href="/admin/cotacao/lst">Desligar</a>
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-        <a href="/admin/cotacao/add"> Iniciar uma nova Cotação</a>
+</div>
 
 </body>
-
 </html>

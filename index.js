@@ -21,8 +21,8 @@ import mongoose from 'mongoose'
 const url = "mongodb+srv://fonteserika0:erikaffppp.01@cluster0.l9y2g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 //se quiser testar a conexão, descomentar o código abaixo
-//mongoose.connect(url)
-//console.log(mongoose.connect)
+mongoose.connect(url)
+console.log(mongoose.connect)
 app.use(routes)
 
-app.listen(3000)
+app.listen(3001)

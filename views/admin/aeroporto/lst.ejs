@@ -1,58 +1,41 @@
-<%-include('../cabecalho.ejs') %>
+<%- include('../cabecalho.ejs') %>
 
+<h1>Aeroportos</h1>
+<div class="add-time">
+    <table>
+        <!-- Cabeçalho da Tabela -->
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Localização</th>
+                <th>Foto</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        
+        <!-- Corpo da Tabela -->
+        <tbody>
+            <% aeroportos.forEach(function(aeroporto){ %>
+            <tr>
+                <td><%= aeroporto.nome %></td>
+                <td><%= aeroporto.localizacao %></td>
+                <td><img src="<%= aeroporto.foto %>" alt="<%= aeroporto.nome %>" width="100"></td>
+                <td>
+                    <a href="/admin/aeroporto/edt/<%= aeroporto.id %>" class="btn edit">
+                        <i class="fas fa-edit"></i>&nbsp;Editar
+                    </a>
+                    <a href="/admin/aeroporto/del/<%= aeroporto.id %>" class="btn delete">
+                        <i class="fas fa-trash"></i>&nbsp;Excluir
+                    </a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
 
+    <!-- Link para adicionar um novo aeroporto -->
+    <a href="/admin/aeroporto/add" class="btn add">Adicionar Aeroporto</a>
+</div>
 
- 
-
-    <h1>Aeroportos</h1>
-    <div class="add-time">
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Localização</th>
-                  
-
-
-
- 
-
-                 
-                    <div class="add-aeroporto">
-                
-                        <table>
-                            <thead>
-                                <tr>
-                           
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- <tr>
-                                    <td>geromel</td>
-                                    <td>2.00</td>
-                                    <td>80 kg</td>
-                                    <td>lateral</td> -->
-                </body>
-                
-                </html></tr>
-            </thead>
-            <tbody>
-
-                <!-- <tr>
-                    <td>geromel</td>
-                    <td>2.00</td>
-                    <td>80 kg</td>
-                    <td>lateral</td> -->
-                    <td class="options">
-                        <a href="/admin/aeroporto/edt">Editar</a>
-                        <a href="/admin/aeroporto/lst">Desligar</a>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <a href="/admin/aeroporto/add"> Adicionar aeroporto</a>
 </body>
-
 </html>
