@@ -28,11 +28,11 @@ export async function addcotacao(req, res) {
 
 export async function listarcotacao(req, res) {
     const resultado = await cotacao.find({}).catch(function(err){console.log(err)});
-    res.render('admin/cotacao/lst',{cotacao: resultado});
+    res.render('admin/cotacao/lst',{cotacaos: resultado});
 }
 export async function filtrarcotacao(req, res) {
     const resultado = await cotacao.find({nome: new RegExp(req.body.pesquisar,"i")})
-    res.render('admin/cotacao/lst',{cotacao: resultado});
+    res.render('admin/cotacao/lst',{cotacaos: resultado});
 }
 
 export async function deletacotacao(req, res) {
@@ -78,7 +78,7 @@ export async function deletaaeroporto(req, res) {
  }
 export async function abreedtaeroporto(req, res){
     const resultado = await aeroporto.findById(req.params.id)
-    res.render('admin/aeroporto/edt',{aeroporto: resultado})
+    res.render('/admin/aeroporto/edt',{aeroporto: resultado})
 }
 export async function edtaeroporto(req, res){
     await aeroporto.findByIdAndUpdate(req.params.id, req.body)
@@ -98,7 +98,6 @@ export async function addusuario(req, res) {
         telefone: req.body.telefone
     })
     res.redirect('/admin/usuario/add')
-
 }
 export async function listarusuario(req, res) {
     const resultado = await usuario.find({}).catch(function(err){console.log(err)});
@@ -149,7 +148,7 @@ export async function deletacompanhia(req, res) {
  }
 export async function abreedtcompanhia(req, res){
     const resultado = await companhia.findById(req.params.id)
-    res.render('admin/companhia/edt',{companhiaompanhia: resultado})
+    res.render('admin/companhia/edt',{companhisa: resultado})
 }
 export async function edtcompanhia(req, res){
     await companhia.findByIdAndUpdate(req.params.id, req.body)

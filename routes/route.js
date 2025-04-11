@@ -51,10 +51,10 @@ router.post('/admin/cotacao/edt', edtcotacao)
 router.get('/admin/aeroporto/lst', listaraeroporto)
 router.post('/admin/aeroporto/lst', filtraraeroporto)
 
-router.get('/admin/aeroporto/del', deletaaeroporto)
+router.get('/admin/aeroporto/del/:id', deletaaeroporto)
 
-router.get('/admin/aeroporto/edt', abreedtaeroporto)
-router.post('/admin/aeroporto/edt', edtaeroporto)
+router.get('/admin/aeroporto/edt/:id', abreedtaeroporto)
+router.post('/admin/aeroporto/edt/:id', edtaeroporto)
 
 router.get('/admin/aeroporto/add', abreaddaeroporto)
 router.post('/admin/aeroporto/add', addaeroporto)
@@ -65,10 +65,10 @@ export default router
 router.get('/admin/usuario/lst', listarusuario)
 router.post('/admin/usuario/lst', filtrarusuario)
 
-router.get('/admin/usuario/del', deletausuario)
+router.get('/admin/usuario/del/:id', deletausuario)
 
-router.get('/admin/usuario/edt', abreedtusuario)
-router.post('/admin/usuario/edt', edtusuario)
+router.get('/admin/usuario/edt/:id', abreedtusuario)
+router.post('/admin/usuario/edt/:id', edtusuario)
 
 router.get('/admin/usuario/add', abreaddusuario)
 router.post('/admin/usuario/add', addusuario)
@@ -80,8 +80,8 @@ router.post('/admin/companhia/add', addcompanhia)
 router.get('/admin/companhia/lst', listarcompanhia)
 router.post('/admin/companhia/lst', filtrarcompanhia)
 
-router.get('/admin/companhia/del', deletacompanhia)
+router.get('/admin/companhia/del/:id', deletacompanhia)
 
-router.get('/admin/companhia/edt', abreedtcompanhia )
-router.post('/admin/companhia/edt', edtcompanhia)
+router.get('/admin/companhia/edt/:id', abreedtcompanhia )
+router.post('/admin/companhia/edt/:id', edtcompanhia)
 

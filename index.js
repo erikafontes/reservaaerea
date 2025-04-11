@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/public'))
 
 import routes from "./routes/route.js"
 import mongoose from 'mongoose'
-const url = "mongodb+srv://fonteserika0:erikaffppp.01@cluster0.l9y2g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const url = "mongodb+srv://aluno:aluno@cluster0.diho964.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 //se quiser testar a conexão, descomentar o código abaixo
 mongoose.connect(url)

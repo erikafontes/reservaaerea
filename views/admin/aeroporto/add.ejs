@@ -1,37 +1,37 @@
 <%-include('../cabecalho.ejs') %>
 
 
-<!DOCTYPE html>
-<html lang="pt-br">
+    <!DOCTYPE html>
+    <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Aeroporto</title>
-    <link rel="stylesheet" href="/css/style.css">
-   
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adicionar Aeroporto</title>
+        <link rel="stylesheet" href="/css/style.css">
 
-<body>
-    <div class="form-box">
-        <h1>Adicionar aeroporto</h1>
-        <form action="#">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" placeholder="Digite o nome do aeroporto"><br>
+    </head>
 
-            <label for="localizacao">Localização</label>
-            <input type="text" id="localizacao" placeholder="Digite a localização do aeroporto" ><br>
+    <body>
+        <div class="form-box">
+            <h1>Adicionar aeroporto</h1>
+            <form action="" method="post">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome do aeroporto"><br>
 
-             <label for="foto">Foto</label> 
-             <input type="text" id="novo-peso" ><br> 
+                <label for="localizacao">Localização</label>
+                <input type="text"  name="localizacao" id="localizacao" placeholder="Digite a localização do aeroporto"><br>
 
-            <button type=" submit">Adicionar </button>
+                <label for="foto">Foto</label>
+                <input type="text" name="foto" id="foto"><br>
 
-            <div class="form-footer">
-                <p>Voltar para a <a href="/admin/aeroporto/lst">Página Inicial</a></p>
-            </div>
-        </form>
-    </div>
-</body>
+                <button type="submit">Adicionar </button>
 
-</html>
+                <div class="form-footer">
+                    <p>Voltar para a <a href="/admin/aeroporto/lst">Página Inicial</a></p>
+                </div>
+            </form>
+        </div>
+    </body>
+
+    </html>

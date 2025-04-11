@@ -1,37 +1,39 @@
 <%-include('../cabecalho.ejs') %>
 
 
-<!DOCTYPE html>
-<html lang="pt-br">
+    <!DOCTYPE html>
+    <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Companhia Aérea</title>
-    <link rel="stylesheet" href="/css/style.css">
-   
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adicionar Companhia Aérea</title>
+        <link rel="stylesheet" href="/css/style.css">
 
-<body>
-    <div class=" form-container">
-        <h1>Adicionar companhia</h1>
-        <form action="#">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" placeholder="Digite o nome do aeroporto"><br>
+    </head>
 
-            <label for="localizacao">Localização</label>
-            <input type="text" id="localizacao" placeholder="Digite a localização do aeroporto" ><br>
+    <body>
+        <div class=" form-container">
+            <h1>Adicionar companhia</h1>
+            <form action="#" method="post">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome do aeroporto"><br>
+ 
+                <label for="pais">País</label>
+                <input type="text" name="pais" id="pais" placeholder="Digite a país do aeroporto"><br>
 
-            <!-- <label for="foto">Foto</label> -->
-            <!-- <input type="number" id="novo-peso" ><br> -->
+                <label for="foto">Foto</label>
+                <input type="text" name="foto" id="foto" placeholder="Digite a foto do aeroporto"><br>
+                <!-- <label for="foto">Foto</label> -->
+                <!-- <input type="number" id="novo-peso" ><br> -->
 
-            <button type=" submit">Adicionar </button>
+                <button type="submit">Adicionar </button>
 
-            <div class="form-footer">
-                <p>Voltar para a <a href="/admin/companhia/lst">Página Inicial</a></p>
-            </div>
-        </form>
-    </div>
-</body>
+                <div class="form-footer">
+                    <p>Voltar para a <a href="/admin/companhia/lst">Página Inicial</a></p>
+                </div>
+            </form>
+        </div>
+    </body>
 
-</html>
+    </html>

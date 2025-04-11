@@ -1,7 +1,7 @@
 <%- include('../cabecalho.ejs') %>
 
 <h1>Usuários</h1>
-<div class="add-time">
+<div class="add-companhia">
     <table>
         <!-- Cabeçalho da Tabela -->
         <thead>
@@ -10,6 +10,7 @@
                 <th>Email</th>
                 <th>CPF</th>
                 <th>Telefone</th>
+                <th>Opções</th>
             </tr>
         </thead>
         <!-- Corpo da Tabela -->
@@ -20,12 +21,10 @@
                 <td><%= usuario.email %></td>
                 <td><%= usuario.cpf %></td>
                 <td><%= usuario.telefone %></td>
-                    <a href="/admin/usuario/edt/<%= usuario.id %>" class="btn edit">
-                        <i class="fas fa-edit"></i>&nbsp;Editar
-                    </a>
+                  <a href="/admin/usuario/edt/<%= usuario.id %>" class="btn edit">
+                        <i class="fas fa-edit"></i>&nbsp;Editar</a>
                     <a href="/admin/usuario/del/<%= usuario.id %>" class="btn delete">
-                        <i class="fas fa-trash"></i>&nbsp;Excluir
-                    </a>
+                        <i class="fas fa-trash"></i>&nbsp;Excluir</a>
                 </td>
             </tr>
             <% }) %>

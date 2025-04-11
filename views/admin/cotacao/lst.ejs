@@ -15,21 +15,22 @@
         </thead>
         <!-- Corpo da tabela -->
         <tbody>
-            <% cotacao.forEach(function(cotacao){ %>
+            
+            <%cotacaos.forEach(function(cotacao){%>
             <tr>
-                <td><%= cotacao.nome %></td>
-                <td><%= cotacao.contato %></td>
-                <td><%= cotacao.status %></td>
+                <td><%=cotacao.nome%></td>
+                <td><%=cotacao.contato%></td>
+                <td><%=cotacao.status%></td>
                 <td>
-                    <a href="/admin/cotacao/edt/<%= cotacao.id %>" class="btn edit">
+                    <a href="/admin/cotacao/edt<%=cotacao.id%>" class="btn edit">
                         <i class="fas fa-edit"></i>&nbsp;Editar
                     </a>
-                    <a href="/admin/cotacao/del/<%= cotacao.id %>" class="btn delete">
+                    <a href="/admin/cotacao/del<%=cotacao.id%>" class="btn delete">
                         <i class="fas fa-trash"></i>&nbsp;Excluir
                     </a>
                 </td>
             </tr>
-            <% }) %>
+            <%})%>
         </tbody>
     </table>
 
