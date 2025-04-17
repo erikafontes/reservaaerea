@@ -1,43 +1,31 @@
 <%-include('../cabecalho.ejs') %>
 
-    <!DOCTYPE html>
+
+    <h1>Editar Informações do Usuário</h1>
+    <form action="" method="post">
+        
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" value="<%=usuario.nome%>"><br>
+        <input type="hidden" id="id" name="id" value="<%=usuario.id%>"> <!-- ID do time -->
 
 
-    <html lang="pt-br">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Digite seu email" value="<%=usuario.email%>"><br>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Editar Informações do Usuário</title>
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF"  value="<%=usuario.cpf%>"><br>
 
-        <link rel="stylesheet" href="/css/style.css">
+        <label for="telefone">Celular</label>
+        <input type="text" name="telefone" id="telefone" placeholder="Digite o N° do seu celular" value="<%=usuario.telefone%>"><br>
 
-    </head>
+        <button type="submit">Editar</button>
+        
+    </form>
 
-    <body>
-        <div class="container">
-            <h1>Editar Informações do Usuário</h1>
-            <form action="" method="post">
-                <label for="nome">Nome</label>
-                <input type="text"  name="nome" id="nome" placeholder="Digite seu nome"><br>
-
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="Digite seu email"><br>
-
-                <label for="cpf">CPF</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF"><br>
-
-                <label for="telefone">Celular</label>
-                <input type="text" name="telefone" id="telefone" placeholder="Digite o N° do seu celular"><br>
-
-
-                <button type="submit">Editar</button>
-            </form>
-
-            <div class="form-footer">
-                <p>Voltar para a <a href="/admin/usuario/lst">Página Inicial</a></p>
-            </div>
-        </div>
+    <div class="form-footer">
+        <p>Voltar para a <a href="/admin/usuario/lst">Página Inicial</a></p>
+    </div>
+    </div>
     </body>
 
     </html>

@@ -78,11 +78,11 @@ export async function deletaaeroporto(req, res) {
  }
 export async function abreedtaeroporto(req, res){
     const resultado = await aeroporto.findById(req.params.id)
-    res.render('/admin/aeroporto/edt',{aeroporto: resultado})
+       res.render('admin/aeroporto/edt',{aeroporto: resultado})
 }
 export async function edtaeroporto(req, res){
     await aeroporto.findByIdAndUpdate(req.params.id, req.body)
-    res.redirect('/admin/aeroporto/edt')
+    res.redirect('/admin/aeroporto/lst')
 }
 
 //usuario
@@ -117,7 +117,7 @@ export async function abreedtusuario(req, res){
 }
 export async function edtusuario(req, res){
     await usuario.findByIdAndUpdate(req.params.id, req.body)
-    res.redirect('/admin/usuario/edt')
+    res.redirect('/admin/usuario/lst')
 }
 
 
@@ -152,7 +152,7 @@ export async function abreedtcompanhia(req, res){
 }
 export async function edtcompanhia(req, res){
     await companhia.findByIdAndUpdate(req.params.id, req.body)
-    res.redirect('/admin/companhia/edt')
+    res.redirect('/admin/companhia/lst')
 }
 
 

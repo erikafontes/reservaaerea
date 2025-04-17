@@ -16,17 +16,19 @@
         <!-- Corpo da Tabela -->
         <tbody>
             <% usuario.forEach(function(usuario){ %>
-            <tr>
-                <td><%= usuario.nome %></td>
-                <td><%= usuario.email %></td>
-                <td><%= usuario.cpf %></td>
-                <td><%= usuario.telefone %></td>
-                  <a href="/admin/usuario/edt/<%= usuario.id %>" class="btn edit">
-                        <i class="fas fa-edit"></i>&nbsp;Editar</a>
-                    <a href="/admin/usuario/del/<%= usuario.id %>" class="btn delete">
-                        <i class="fas fa-trash"></i>&nbsp;Excluir</a>
-                </td>
-            </tr>
+                <tr>
+                    <td><%= usuario.nome %></td>
+                    <td><%= usuario.email %></td>
+                    <td><%= usuario.cpf %></td>
+                    <td><%= usuario.telefone %></td>
+                    <td>
+                        <a href="/admin/usuario/edt/<%= usuario.id %>" class="btn edit">
+                            <i class="fas fa-edit"></i>&nbsp;Editar</a>
+                        <a href="/admin/usuario/del/<%= usuario.id %>" class="btn delete">
+                            <i class="fas fa-trash"></i>&nbsp;Excluir</a>
+                    </td>
+                </tr>
+                
             <% }) %>
         </tbody>
     </table>
