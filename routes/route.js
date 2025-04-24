@@ -1,4 +1,19 @@
 import express from 'express';
+
+import multer from 'multer';
+var storage = multer.diskStorage({
+    filename: function(req, file, cb){
+    let nome = Date.now() + "-" + file.originalname
+    cb(null, nome)
+    },
+    destination: function(req, file, cb){
+    let path = "./public/arquivos"
+    cb(null, path)
+    }
+    })
+    var upload = multer({ storage })
+
+
 const router = express.Router();
 import {
     home,
@@ -54,10 +69,10 @@ router.post('/admin/aeroporto/lst', filtraraeroporto)
 router.get('/admin/aeroporto/del/:id', deletaaeroporto)
 
 router.get('/admin/aeroporto/edt/:id', abreedtaeroporto)
-router.post('/admin/aeroporto/edt/:id', edtaeroporto)
+router.post('/admin/aeroporto/edt/:id',upload.single("foto"), edtaeroporto)
 
 router.get('/admin/aeroporto/add', abreaddaeroporto)
-router.post('/admin/aeroporto/add', addaeroporto)
+router.post('/admin/aeroporto/add', upload.single("foto"), addaeroporto)
 
 //usuario
 export default router

@@ -56,10 +56,19 @@ export async function abreaddaeroporto(req, res) {
 
 }
 export async function addaeroporto(req, res) {
+   var fotoupload;
+   if(req.file != null){
+   fotoupload = req.file.filename
+   }
+   else{
+    fotoupload =null
+   }
+   
+    //console.log(req.file)
         await aeroporto.create({
             nome:req.body.nome,
             localizacao:req.body.localizacao,
-            foto: req.body.foto,
+            foto: fotoupload,
         })
         res.redirect('/admin/aeroporto/add')
     }
@@ -81,7 +90,20 @@ export async function abreedtaeroporto(req, res){
        res.render('admin/aeroporto/edt',{aeroporto: resultado})
 }
 export async function edtaeroporto(req, res){
-    await aeroporto.findByIdAndUpdate(req.params.id, req.body)
+    var fotoupload;
+    if(req.file != null){
+    fotoupload = req.file.filename
+    }
+    else{
+     fotoupload =null
+    }
+
+    await aeroporto.findByIdAndUpdate(req.params.id, 
+        {nome:req.body.nome,
+            localizacao:req.body.localizacao,
+            foto:fotoupload,
+        }
+    )
     res.redirect('/admin/aeroporto/lst')
 }
 
@@ -127,6 +149,14 @@ export async function abreaddcompanhia(req, res) {
     res.render('admin/companhia/add')
 }
 export async function addcompanhia(req, res) {
+    var fotoupload;
+    if(req.file != null){
+    fotoupload = req.file.filename
+    }
+    else{
+     fotoupload =null
+    }
+
     await companhia.create({
         nome:req.body.nome,
         pais:req.body.pais,
@@ -148,7 +178,7 @@ export async function deletacompanhia(req, res) {
  }
 export async function abreedtcompanhia(req, res){
     const resultado = await companhia.findById(req.params.id)
-    res.render('admin/companhia/edt',{companhisa: resultado})
+    res.render('admin/companhia/edt',{companhia: resultado})
 }
 export async function edtcompanhia(req, res){
     await companhia.findByIdAndUpdate(req.params.id, req.body)

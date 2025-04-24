@@ -14,6 +14,7 @@ const aeroporto = {
    foto:{
     type:String,
     required: false
-   }
+   },
+   
 }
 export default conexao.model("aeroporto",aeroporto) 

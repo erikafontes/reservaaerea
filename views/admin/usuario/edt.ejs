@@ -1,6 +1,6 @@
 <%-include('../cabecalho.ejs') %>
 
-
+<div class="form-box">
     <h1>Editar Informações do Usuário</h1>
     <form action="" method="post">
         
@@ -16,12 +16,12 @@
         <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF"  value="<%=usuario.cpf%>"><br>
 
         <label for="telefone">Celular</label>
-        <input type="text" name="telefone" id="telefone" placeholder="Digite o N° do seu celular" value="<%=usuario.telefone%>"><br>
-
+        <input type="text" name="telefone" id="telefone" placeholder="Digite n? de celular"  value="<%=usuario.telefone%>"><br>
+        
         <button type="submit">Editar</button>
         
     </form>
-
+        
     <div class="form-footer">
         <p>Voltar para a <a href="/admin/usuario/lst">Página Inicial</a></p>
     </div>

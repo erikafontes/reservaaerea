@@ -13,21 +13,24 @@
     </head>
 
     <body>
-        <div class="form-box">
+        <div class="form-box
+        ">
             <h1>Adicionar aeroporto</h1>
-            <form action="" method="post">
+            <form enctype="multipart/form-data" method="post">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o nome do aeroporto"><br>
 
                 <label for="localizacao">Localização</label>
-                <input type="text"  name="localizacao" id="localizacao" placeholder="Digite a localização do aeroporto"><br>
+                <input type="text" name="localizacao" id="localizacao"
+                    placeholder="Digite a localização do aeroporto"><br>
 
                 <label for="foto">Foto</label>
-                <input type="text" name="foto" id="foto"><br>
+                <input type="file" name="foto" id="foto"><br>
 
                 <button type="submit">Adicionar </button>
-
                 <div class="form-footer">
+
+
                     <p>Voltar para a <a href="/admin/aeroporto/lst">Página Inicial</a></p>
                 </div>
             </form>

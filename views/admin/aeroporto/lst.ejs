@@ -19,7 +19,10 @@
             <tr>
                 <td><%= aeroporto.nome %></td>
                 <td><%= aeroporto.localizacao %></td>
-                <td><img src="<%= aeroporto.foto %>" alt="<%= aeroporto.nome %>" width="100"></td>
+                <td>
+                    <img src="/arquivos/<%=aeroporto.foto%>" class="Imenor"/>
+                </td>
+
                 <td>
                     <a href="/admin/aeroporto/edt/<%= aeroporto.id %>" class="btn edit">
                         <i class="fas fa-edit"></i>&nbsp;Editar
