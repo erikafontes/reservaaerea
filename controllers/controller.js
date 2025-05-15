@@ -10,13 +10,31 @@ export async function home(req,res){
 
 //cotacao
 export async function abreaddcotacao(req, res) {
-    res.render('admin/cotacao/add')
+    const resultado = await aeroporto.find({}).catch(function(err){console.log(err)})
+    res.render('admin/cotacao/add', {aeroportos:resultado})
 }
 
 export async function addcotacao(req, res) {
+
+    var corigem = null;
+    //se vier time, busca
+        if(req.body.origem!=null)
+        {
+            corigem = await aeroporto.findById(req.body.origem)
+        }
+        var cdestino = null;
+        if(req.body.destino!=null)
+            {
+                cdestino = await aeroporto.findById(req.body.destino)
+            }
+            var cusuario = null;
+        if(req.body.usuario!=null)
+            {
+                cusuario = await aeroporto.findById(req.body.usuario)
+            }
     await cotacao.create({
-        origem: req.body.origem,
-        destino: req.body.destino,
+        origem: corigem,
+        destino: cdestino,
         ida: req.body.ida,
         volta: req.body.volta,
         nome: req.body.nome,
@@ -26,8 +44,9 @@ export async function addcotacao(req, res) {
     res.redirect('/admin/cotacao/add')
 }
 
+
 export async function listarcotacao(req, res) {
-    const resultado = await cotacao.find({}).catch(function(err){console.log(err)});
+    const resultado = await cotacao.find({}).populate("origem").catch(function(err){console.log(err)});
     res.render('admin/cotacao/lst',{cotacaos: resultado});
 }
 export async function filtrarcotacao(req, res) {

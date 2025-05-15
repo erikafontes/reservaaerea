@@ -6,10 +6,11 @@
     <table>
         <!-- Cabeçalho da tabela -->
         <thead>
-            <tr>
+          <tr>
                 <th>Nome</th>
                 <th>Contato</th>
-                <th>Status</th>
+                <th>origem</th>
+                <th>status</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -18,16 +19,17 @@
             
             <%cotacaos.forEach(function(cotacao){%>
             <tr>
-                <td><%=cotacao.nome%></td>
+                <td><%=cotacao.usuario !=null?cotacao.usuario.nome:""%></td>
                 <td><%=cotacao.contato%></td>
+                <td><%=cotacao.corigem!=null?cotacao.origem.nome:""%></td>
+                <!-- <td><%=cotacao.destino!=null?cotacao.aeroporto.destino:""%></td> -->
                 <td><%=cotacao.status%></td>
                 <td>
                     <a href="/admin/cotacao/edt<%=cotacao.id%>" class="btn edit">
                         <i class="fas fa-edit"></i>&nbsp;Editar
                     </a>
-                    <a href="/admin/cotacao/del<%=cotacao.id%>" class="btn delete">
-                        <i class="fas fa-trash"></i>&nbsp;Excluir
-                    </a>
+                    
+                        <a href="/admin/cotacao/del/<%=cotacao.id%>">Excluir</a>
                 </td>
             </tr>
             <%})%>

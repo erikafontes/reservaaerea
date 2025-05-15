@@ -4,11 +4,11 @@ import conexao from "../config/conexao.js"
 const cotacao = {
 
 origem: {
-    type:String,
+    type:conexao.Types.ObjectId, ref: "aeroporto",
     require:true
 },
 destino: {
-    type:String,
+    type:conexao.Types.ObjectId, ref: "aeroporto",
     require:true
 },
 ida: {

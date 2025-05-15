@@ -17,20 +17,22 @@
         <form action="" method="post">
             
             <label for="origem">Origem</label>
-            <select class="form-select"  id="origem" name="origem required">
+            <select class="form-select"  id="origem" name="origem">
                 <option value=""disabled selected hidden>Selecione seu local de Origem</option>
-              <option value="">a</option>
-              <option value="">b</option>
-              <option value="">c</option>
-            </select>
+                <%aeroportos.forEach(function(aeroporto){%>
 
+                    <option value='<%=aeroporto.id%>'><%=aeroporto.nome%></option>
+                 <%})%>
+            </select>
 
             <label for="destino">Destino</label>
             <select class="form-select"  id="destino" name="destino required">
                 <option value=""disabled selected hidden>Selecione seu local de destino</option>
-              <option value="">a</option>
-              <option value="">b</option>
-              <option value="">c</option>
+             
+                <%aeroportos.forEach(function(aeroporto){%>
+
+                    <option value='<%=aeroporto.id%>'><%=aeroporto.nome%></option>
+                 <%})%>
             </select>
            
 
