@@ -26,7 +26,7 @@
             </select>
 
             <label for="destino">Destino</label>
-            <select class="form-select"  id="destino" name="destino required">
+            <select class="form-select"  id="destino" name="destino">
                 <option value=""disabled selected hidden>Selecione seu local de destino</option>
              
                 <%aeroportos.forEach(function(aeroporto){%>
@@ -34,13 +34,22 @@
                     <option value='<%=aeroporto.id%>'><%=aeroporto.nome%></option>
                  <%})%>
             </select>
+            <label for="usuario">Nome</label>
+            <select class="form-select"  id="usuario" name="usuario">
+                <option value=""disabled selected hidden>Selecione seu nome de usuario</option>
+             
+                <%usuarios.forEach(function(usuario){%>
+
+                    <option value='<%=usuario.id%>'><%=usuario.nome%></option>
+                 <%})%>
+            </select>
            
 
             <label for="ida">Data de ida</label>
-            <input type="date" id="ida">
+            <input type="date" id="ida" name="ida">
 
             <label for="volta">Data de volta</label>
-            <input type="date" id="volta">
+            <input type="date" id="volta" name="volta">
 
           
            

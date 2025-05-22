@@ -19,13 +19,10 @@ volta: {
     type:String,
     require:true
 },
-nome: {
-    type:String,
+usuario: {
+    type:conexao.Types.ObjectId, ref: "usuario",
     require:true
-},
-contato: {
-    type:String,
-    require:true
+
 },
 status: {
     type:String,

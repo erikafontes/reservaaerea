@@ -1,8 +1,11 @@
 <%- include('../cabecalho.ejs') %>
 
 <h1>Companhias Aéreas</h1>
-<div class="add-time">
+<div class="form-container">
     <table>
+        <label for="pesquisar">Pesquisar:</label>
+<input type="text" id="pesquisar" placeholder="Digite para filtrar...">
+
         <!-- Cabeçalho da tabela -->
         <thead>
             <tr>
@@ -18,7 +21,8 @@
             <tr>
                 <td><%= companhia.nome %></td>
                 <td><%= companhia.pais %></td>
-                <td><img src="<%= companhia.foto %>" alt="<%= companhia.nome %>"></td>
+               
+                <td><img src="/arquivos/<%= companhia.foto%>" class="Imenor"/>
                 <td>
                     <a href="/admin/companhia/edt/<%= companhia.id %>" class="btn edit">
                         <i class="fas fa-edit"></i>&nbsp;Editar

@@ -90,7 +90,7 @@ router.post('/admin/usuario/add', addusuario)
 
 //companhia
 router.get('/admin/companhia/add', abreaddcompanhia)
-router.post('/admin/companhia/add', addcompanhia)
+router.post('/admin/companhia/add', upload.single("foto"),addcompanhia)
 
 router.get('/admin/companhia/lst', listarcompanhia)
 router.post('/admin/companhia/lst', filtrarcompanhia)
@@ -98,5 +98,5 @@ router.post('/admin/companhia/lst', filtrarcompanhia)
 router.get('/admin/companhia/del/:id', deletacompanhia)
 
 router.get('/admin/companhia/edt/:id', abreedtcompanhia )
-router.post('/admin/companhia/edt/:id', edtcompanhia)
+router.post('/admin/companhia/edt/:id', upload.single("foto"), edtcompanhia)
 

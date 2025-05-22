@@ -1,20 +1,25 @@
 <%- include('../cabecalho.ejs') %>
 
 <h1>Aeroportos</h1>
-<div class="add-time">
-    <table>
-        <!-- Cabeçalho da Tabela -->
-        <thead>
+<div class="form-container">
+    <table> 
+        <form action="/admin/aeroporto/lst" method="post">
+        <input type="text" id="pesquisar" placeholder="Pesquisar">
+        <button type="submit">pesquisar</button>
+        
+    </form>
+<div class="form-box"  >
+
             <tr>
                 <th>Nome</th>
                 <th>Localização</th>
                 <th>Foto</th>
                 <th>Opções</th>
             </tr>
-        </thead>
+    
         
         <!-- Corpo da Tabela -->
-        <tbody>
+
             <% aeroportos.forEach(function(aeroporto){ %>
             <tr>
                 <td><%= aeroporto.nome %></td>
@@ -33,7 +38,7 @@
                 </td>
             </tr>
             <% }) %>
-        </tbody>
+        </div>
     </table><tr>
       
 

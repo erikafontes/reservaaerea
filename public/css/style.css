@@ -7,32 +7,23 @@
 
 /* ===== CORPO E ESTILO GERAL ===== */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #E0FFFF);
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
   min-height: 100vh;
-  color: #000000;
-  margin: 0;
-}
-.aerimg{
-  width: 25%;
-  height: 25%;
-}
-/* ===== IMAGENS AJUSTADAS ===== */
-.Imenor {
-  width: 25%;
-  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* ===== CABEÇALHO ===== */
 header {
   background-color: #538d99;
-  color: #000000;
-  padding: 20px 0; 
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 /* ===== NAVEGAÇÃO ===== */
@@ -40,221 +31,141 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 50px;
-  margin: 0;
-  padding: 0;
+  gap: 20px;
+  padding: 10px 0;
 }
 
 nav ul li a {
-  color: #000000;
-  font-weight: 800;
-  font-size: 18px;
+  color: #fff;
   text-decoration: none;
-  transition: color 0.3s, transform 0.2s;
+  font-weight: bold;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-  color: #6fc1d1;
-  transform: scale(1.1);
-  outline: none;
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
-/* ===== CONTAINER DO FORMULÁRIO ===== */
+/* ===== FORMULÁRIO ===== */
 .form-container {
-  display: flex;
-  justify-content: center;  /* Garante que o formulário ficará centralizado horizontalmente */
-  align-items: center;      /* Garante que o formulário ficará centralizado verticalmente */
-  min-height: 100vh;         /* Usa 100% da altura da tela */
+  max-width: 500px;
+  margin: 50px auto;
   padding: 20px;
-  box-sizing: border-box;
-  margin-top: 80px;          /* Se necessário, pode ajustar esse valor */
+  background: #fff;
+  border-radius: 8px;
 }
 
-.form-box {
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px #c200001a;
-  padding: 40px;
+.form-container input,
+.form-container select {
   width: 100%;
-  max-width: 500px;         /* Limita a largura máxima do formulário */
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ===== FORM-BOX ===== */
+.form-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  
   display: flex;
   flex-direction: column;
+  align-items: center; /* Centraliza tudo horizontalmente */
 }
 
-
-input,
-select {
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #538d99;
-  font-size: 16px;
-  transition: 0.3s;
-  margin-bottom: 14px;
-}
-
-input:focus,
-select:focus {
-  border-color: #538d99;
-  outline: none;
-}
-
-/* ===== BOTÃO PADRÃO DO FORMULÁRIO ===== */
-button[type="submit"] {
-  display: inline-block;
-  background: linear-gradient(120deg, #538d99);
-  color: rgb(0, 0, 0);
-  padding: 10px 20px;
-  border-radius: 15px;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
-  width: 50%;
-  max-width: 100px;
-  right: -100px;
-  align-self: center;
+.form-box h2 {
+  margin-bottom: 20px;
   text-align: center;
-  margin-top: 20px;
-  position: relative;
-  top: -15px;
-left: 15px;
-  overflow: hidden;
-}
-
-.btn {
-  position: relative;
-  top: 30;
-  left: 20px;
-}
-
-button[type="submit"]::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
+  color: #333;
   width: 100%;
-  height: 100%;
-  background: rgba(139, 201, 216, 0.2);
-  transition: left 0.3s;
 }
 
-button[type="submit"]:hover::after {
-  left: 100%;
-}
-
-button[type="submit"]:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 119, 182, 0.4);
-}
-
-/* ===== TABELAS PADRONIZADAS E RESPONSIVAS ===== */
-.table-section {
+.form-group {
+  margin-bottom: 15px;
   width: 100%;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
-  overflow-x: auto;
-  text-align: center;
+}
+
+/* ===== BOTÃO ===== */
+button,
+button[type="submit"] {
+  background-color: #538d99;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+button[type="submit"]:hover {
+  background-color: #41727f;
+}
+
+/* ===== TABELAS ===== */
+.table-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 15px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 20px;
-  /* box-shadow: 0 4px 12px rgba(255, 0, 0, 0.932); */
 }
 
-table thead th {
+table thead {
   background-color: #538d99;
-  color: rgb(0, 0, 0);
-  padding: 16px 12px;
-  font-size: 16px;
-  font-weight: 600;
+  color: #fff;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ddd;
   text-align: center;
 }
 
-table td {
-  background-color: #c5f4ff;
-  padding: 14px 12px;
-  border-top: 1px solid #80d0f0;
-  font-size: 15px;
+/* ===== IMAGENS AJUSTADAS ===== */
+.img-small {
+  display: block;
+  margin: 20px auto; /* Centraliza a imagem */
+  max-width: 100%; /* Não estoura o container */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===== RODAPÉ ===== */
+.footer {
+  background-color: #538d99;
+  color: white;
   text-align: center;
-}
-
-table tbody tr:nth-child(even) td {
-  background-color: #c5f4ff;
-}
-
-@media (max-width: 768px) {
-  .table-section {
-    padding: 0 10px;
-  }
-
-  table thead th,
-  table td {
-    font-size: 14px;
-    padding: 12px 8px;
-  }
-}
-
-/* ===== BOTÕES PADRÕES ===== */
-.btn {
-  display: inline-block;
-  color: rgb(0, 0, 0);
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  /* box-shadow: 0 4px 12px rgba(92, 145, 173, 0.3); */
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
+  padding: 10px;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  transition: left 0.4s;
-}
-
-.btn:hover::after {
-  left: 100%;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 119, 182, 0.4);
-}
-
-.btn:focus {
-  outline: 2px solid #00B4D8;
-  outline-offset: 2px;
-}
-
-/* ===== VARIAÇÕES DOS BOTÕES ===== */
-.btn.add {
-  background: linear-gradient(135deg, #538d99);
-}
-
-.btn.edit {
-  background: linear-gradient(135deg, #ffa600c5, #ff8c00a9); /* Amarelo */
-}
-
-.btn.delete {
-  background: linear-gradient(135deg, #d00000d5, #ff4d4dc9); /* Vermelho */
 }

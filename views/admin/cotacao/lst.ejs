@@ -1,15 +1,15 @@
 <%- include('../cabecalho.ejs') %>
 
 <h1>Cotações</h1>
-<div class="add-time">
+<div class="form-container">
 
     <table>
         <!-- Cabeçalho da tabela -->
         <thead>
           <tr>
-                <th>Nome</th>
-                <th>Contato</th>
+                <th>Usuario</th>
                 <th>origem</th>
+                <th>destino</th>
                 <th>status</th>
                 <th>Ações</th>
             </tr>
@@ -19,10 +19,9 @@
             
             <%cotacaos.forEach(function(cotacao){%>
             <tr>
-                <td><%=cotacao.usuario !=null?cotacao.usuario.nome:""%></td>
-                <td><%=cotacao.contato%></td>
-                <td><%=cotacao.corigem!=null?cotacao.origem.nome:""%></td>
-                <!-- <td><%=cotacao.destino!=null?cotacao.aeroporto.destino:""%></td> -->
+                <td><%=cotacao.usuario!=null?cotacao.usuario.nome:""%></td>
+                <td><%=cotacao.origem!=null?cotacao.origem.nome:""%></td>
+                <td><%=cotacao.destino!=null?cotacao.destino.nome:""%></td>
                 <td><%=cotacao.status%></td>
                 <td>
                     <a href="/admin/cotacao/edt<%=cotacao.id%>" class="btn edit">
