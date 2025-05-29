@@ -22,12 +22,12 @@
                 <td><%= companhia.nome %></td>
                 <td><%= companhia.pais %></td>
                
-                <td><img src="/arquivos/<%= companhia.foto%>" class="Imenor"/>
+                <td><img src="/arquivos/<%= companhia.foto%>" class="Imenor" width="50%" height="50%"/>
                 <td>
                     <a href="/admin/companhia/edt/<%= companhia.id %>" class="btn edit">
                         <i class="fas fa-edit"></i>&nbsp;Editar
                     </a>
-                    <a href="/admin/companhia/del/<%= companhia.id %>" class="btn delete">
+                    <a href="/admin/companhia/del/<%= companhia.id %>" class="delete-btn">
                         <i class="fas fa-trash"></i>&nbsp;Excluir
                     </a>
                 </td>

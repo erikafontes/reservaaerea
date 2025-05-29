@@ -60,15 +60,29 @@ export async function deletacotacao(req, res) {
     res.redirect('/admin/cotacao/lst')
  }
  export async function abreedtcotacao(req, res){
-    const resultado = await cotacao.findById(req.params.id)
-    res.render('admin/cotacao/edt',{cotacao: resultado})
+    const resp = await cotacao.findById(req.params.id)
+    const resposta = await usuario.find({}).catch(function(err){console.log(err)})
+    const resultado = await aeroporto.find({}).catch(function(err){console.log(err)})
+    res.render('admin/cotacao/edt',{cotacaos:resp,  usuarios:resposta, aeroportos:resultado})
 }
-export async function edtcotacao(req, res){
-    await cotacao.findByIdAndUpdate(req.params.id, req.body)
+
+export async function edtcotacao(req, res){  
+    await cotacao.findByIdAndUpdate(req.params.id, 
+
+          {origem:req.body.origem,
+            destino:req.body.destino,
+            ida:req.body.ida,
+            volta:req.body.volta,
+            usuario:req.body.usuario,
+            status:req.body.destino,
+        }
+    )
     res.redirect('/admin/cotacao/lst')
+
+
+
+    
 }
-
-
 //aeroporto
 
 export async function abreaddaeroporto(req, res) {
@@ -110,34 +124,47 @@ export async function abreedtaeroporto(req, res){
        res.render('admin/aeroporto/edt',{aeroporto: resultado})
 }
 export async function edtaeroporto(req, res){
-    var fotoupload;
-    if(req.file != null){
-    fotoupload = req.file.filename
-    }
-    else{
-     fotoupload =null
+    var salvefoto;
+    if(req.file ==upfoto){
+        salvefoto = upfoto
+    } 
+    else
+    {
+        salvefoto=null;
     }
 
-    await aeroporto.findByIdAndUpdate(req.params.id, 
-        {nome:req.body.nome,
-            localizacao:req.body.localizacao,
-            foto:fotoupload,
-        }
-    )
+    var upfoto;
+    if(req.file != null){
+    upfoto = req.file.filename
+    }
+    else{
+     upfoto = salvefoto
+    }
+    
     res.redirect('/admin/aeroporto/lst')
-}
+
+    await aeroporto. findByIdAndUpdate(req.params.id, 
+        {
+            nome:req.body.nome,
+            localizacao:req.body.localizacao,
+            foto:upfoto,
+        }
+    )}
+        
+
 
 //usuario
 
 export async function abreaddusuario(req, res) {
     res.render('admin/usuario/add')
 }
-export async function addusuario(req, res) {
+export async function addusuario(req, res) {edt
     await usuario.create({
         nome:req.body.nome,
         email:req.body.email,
         cpf: req.body.cpf,
         telefone: req.body.telefone
+
     })
     res.redirect('/admin/usuario/add')
 }
@@ -146,6 +173,7 @@ export async function listarusuario(req, res) {
     res.render('admin/usuario/lst',{usuario: resultado});
 }
 export async function filtrarusuario(req, res) {
+
     const resultado = await usuario.find({nome: new RegExp(req.body.pesquisar,"i")})
     res.render('admin/usuario/lst',{usuarios: resultado});
 }
@@ -169,6 +197,7 @@ export async function abreaddcompanhia(req, res) {
     res.render('admin/companhia/add')
 }
 export async function addcompanhia(req, res) {
+
     var fotoupload;
     if(req.file != null){
     fotoupload = req.file.filename
@@ -201,7 +230,31 @@ export async function abreedtcompanhia(req, res){
     res.render('admin/companhia/edt',{companhia: resultado})
 }
 export async function edtcompanhia(req, res){
-    await companhia.findByIdAndUpdate(req.params.id, req.body)
+    var salvfoto;
+    if(req.file ==fotoup){
+        salvfoto = fotoup
+    } 
+    else
+    {(salvfoto=null)}
+
+    console.log(salvfoto)
+
+    var fotoup;
+    if(req.file != null){
+    fotoup = req.file.filename
+    }
+    else{
+     fotoup = salvfoto
+    }
+    console.log(fotoup)
+
+    await companhia. findByIdAndUpdate(req.params.id,
+        {
+        nome:req.body.nome,
+        pais:req.body.pais,
+        foto: fotoup,
+    })  
+    
     res.redirect('/admin/companhia/lst')
 }
 

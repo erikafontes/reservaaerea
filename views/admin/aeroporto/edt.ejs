@@ -26,9 +26,11 @@
             <label for="localizacao">Localização</label>
             <input type="text"  name="localizacao" id="localizacao"  value="<%=aeroporto.localizacao%>" placeholder="Digite a localização do aeroporto"><br>
 
-            <img src = "/arquivos/<%=aeroporto.foto%>" class="aerimg "/>
+            <input type="text" name="fotoantiga" value="<%=aeroporto.foto%>">
+            <img src = "/arquivos/<%=aeroporto.foto%>"/>
             <label for="foto">Foto</label>
-            <input type="file" name="foto" id="foto"   value="<%=aeroporto.foto%>"><br>
+            <input type="file" name="foto" id="foto"   value="<%=aeroporto.foto%>" select name="foto" id="foto"></select><br>
+
             <!-- <label for="foto">Foto</label> -->
             <!-- <input type="number" id="novo-peso" ><br> -->
 

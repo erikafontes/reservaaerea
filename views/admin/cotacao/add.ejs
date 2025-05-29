@@ -1,69 +1,84 @@
 <%-include('../cabecalho.ejs') %>
 
 
-<!DOCTYPE html>
-<html lang="pt-br">
+    <!DOCTYPE html>
+    <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Cotação</title>
-    <link rel="stylesheet" href="/css/style.css">
-   
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar Cotação</title>
+        <link rel="stylesheet" href="/css/style.css">
 
-<body>
-    <div class="form-box">
-        <form action="" method="post">
-            
-            <label for="origem">Origem</label>
-            <select class="form-select"  id="origem" name="origem">
-                <option value=""disabled selected hidden>Selecione seu local de Origem</option>
-                <%aeroportos.forEach(function(aeroporto){%>
+    </head>
 
-                    <option value='<%=aeroporto.id%>'><%=aeroporto.nome%></option>
-                 <%})%>
-            </select>
+    <body>
+        <div class="form-box">
+            <form action="" method="post">
 
-            <label for="destino">Destino</label>
-            <select class="form-select"  id="destino" name="destino">
-                <option value=""disabled selected hidden>Selecione seu local de destino</option>
-             
-                <%aeroportos.forEach(function(aeroporto){%>
+                <label for="origem">Origem</label>
+                <select class="form-select" id="origem" name="origem">
+                    <option value="" disabled selected hidden>Selecione seu local de Origem</option>
+                    <%aeroportos.forEach(function(aeroporto){%>
 
-                    <option value='<%=aeroporto.id%>'><%=aeroporto.nome%></option>
-                 <%})%>
-            </select>
-            <label for="usuario">Nome</label>
-            <select class="form-select"  id="usuario" name="usuario">
-                <option value=""disabled selected hidden>Selecione seu nome de usuario</option>
-             
-                <%usuarios.forEach(function(usuario){%>
+                        <option value='<%=aeroporto.id%>'>
+                            <%=aeroporto.nome%>
+                        </option>
+                        <%})%>
+                </select>
 
-                    <option value='<%=usuario.id%>'><%=usuario.nome%></option>
-                 <%})%>
-            </select>
-           
+                <label for="destino">Destino</label>
+                <select class="form-select" id="destino" name="destino">
+                    <option value="" disabled selected hidden>Selecione seu local de destino</option>
 
-            <label for="ida">Data de ida</label>
-            <input type="date" id="ida" name="ida">
+                    <%aeroportos.forEach(function(aeroporto){%>
 
-            <label for="volta">Data de volta</label>
-            <input type="date" id="volta" name="volta">
+                        <option value='<%=aeroporto.id%>'>
+                            <%=aeroporto.nome%>
+                        </option>
+                        <%})%>
+                </select>
+                
+                <label for="usuario">Nome</label>
+                <select class="form-select" id="usuario" name="usuario">
+                    <option value="" disabled selected hidden>Selecione seu nome de usuario</option>
 
-          
-           
+                    <%usuarios.forEach(function(usuario){%>
 
-            <!-- <label for="foto">Foto</label> -->
-            <!-- <input type="number" id="novo-peso" ><br> -->
+                        <option value='<%=usuario.id%>'>
+                            <%=usuario.nome%>
+                        </option>
+                        <%})%>
+                </select>
 
-            <button type="submit">Adicionar </button>
 
-            <div class="form-footer">
-                <p>Voltar para a <a href="/admin/cotacao/lst">Cotações</a></p>
-            </div>
-        </form>
-    </div>
-</body>
+                <label for="ida">Data de ida</label>
+                <input type="date" id="ida" name="ida">
 
-</html>
+                <label for="volta">Data de volta</label>
+                <input type="date" id="volta" name="volta">
+
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                  <option value="em_processo">Em processo</option>
+                  <option value="aprovado">Aprovado</option>
+                </select>
+                
+
+
+
+
+
+                <!-- <label for="foto">Foto</label> -->
+                <!-- <input type="number" id="novo-peso" ><br> -->
+
+                <button type="submit">Adicionar </button>
+
+                <div class="form-footer">
+                    <p>Voltar para a <a href="/admin/cotacao/lst">Cotações</a></p>
+                </div>
+            </form>
+        </div>
+    </body>
+
+    </html>

@@ -57,10 +57,10 @@ router.post('/admin/cotacao/add', addcotacao)
 router.get('/admin/cotacao/lst', listarcotacao)
 router.post('/admin/cotacao/lst', filtrarcotacao)
 
-router.get('/admin/cotacao/del', deletacotacao)
+router.get('/admin/cotacao/del/:id', deletacotacao)
 
-router.get('/admin/cotacao/edt', abreedtcotacao )
-router.post('/admin/cotacao/edt', edtcotacao)
+router.get('/admin/cotacao/edt:id', abreedtcotacao )
+router.post('/admin/cotacao/edt:id', edtcotacao)
 
 //aeroporto
 router.get('/admin/aeroporto/lst', listaraeroporto)
